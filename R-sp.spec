@@ -17,13 +17,16 @@ Requires:         R-lattice R-RColorBrewer
 %else
 Requires:         R-lattice R-RColorBrewer R-rgdal R-rgeos 
 %endif
-BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-methods R-graphics
-BuildRequires:    R-utils R-lattice R-grid 
+BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-methods
+BuildRequires:    R-graphics R-utils R-lattice R-grid
 %if %{with bootstrap}
 BuildRequires:    R-lattice R-RColorBrewer
 %else
 BuildRequires:    R-lattice R-RColorBrewer R-rgdal R-rgeos 
 %endif
+BuildRequires:    blas-devel
+BuildRequires:    lapack-devel
+BuildRequires:    x11-server-xvfb
 
 %description
 A package that provides classes and methods for spatial data. The classes
@@ -45,7 +48,7 @@ rm -f %{buildroot}%{rlibdir}/R.css
 
 %if %{without bootstrap}
 %check
-%{_bindir}/R CMD check %{packname}
+xvfb-run %{_bindir}/R CMD check %{packname}
 %endif
 
 %files

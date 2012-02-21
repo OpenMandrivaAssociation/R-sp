@@ -1,10 +1,10 @@
-%bcond_without bootstrap
+%bcond_with bootstrap
 %global packname  sp
 %global rlibdir  %{_libdir}/R/library
 
 Name:             R-%{packname}
 Version:          0.9_95
-Release:          1
+Release:          2
 Summary:          classes and methods for spatial data
 Group:            Sciences/Mathematics
 License:          GPL (>= 2)

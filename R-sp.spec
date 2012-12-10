@@ -1,4 +1,4 @@
-%bcond_with bootstrap
+%bcond_without bootstrap
 %global packname  sp
 %global rlibdir  %{_libdir}/R/library
 
@@ -10,14 +10,19 @@ Group:            Sciences/Mathematics
 License:          GPL (>= 2)
 URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
 Source0:          http://cran.r-project.org/src/contrib/%{packname}_0.9-95.tar.gz
-Requires:         R-methods R-graphics R-utils R-lattice R-grid R-RColorBrewer
-%if %{without bootstrap}
-Requires:         R-rgdal R-rgeos
+Requires:         R-methods R-graphics 
+Requires:         R-utils R-lattice R-grid 
+%if %{with bootstrap}
+Requires:         R-lattice R-RColorBrewer
+%else
+Requires:         R-lattice R-RColorBrewer R-rgdal R-rgeos 
 %endif
-BuildRequires:    R-devel Rmath-devel texlive-collection-latex
-BuildRequires:    R-methods R-graphics R-utils R-lattice R-grid R-RColorBrewer
-%if %{without bootstrap}
-BuildRequires:    R-rgdal R-rgeos
+BuildRequires:    R-devel Rmath-devel texlive-collection-latex R-methods
+BuildRequires:    R-graphics R-utils R-lattice R-grid
+%if %{with bootstrap}
+BuildRequires:    R-lattice R-RColorBrewer
+%else
+BuildRequires:    R-lattice R-RColorBrewer R-rgdal R-rgeos 
 %endif
 BuildRequires:    blas-devel
 BuildRequires:    lapack-devel
@@ -63,3 +68,15 @@ xvfb-run %{_bindir}/R CMD check %{packname}
 %{rlibdir}/%{packname}/help
 %{rlibdir}/%{packname}/include
 %{rlibdir}/%{packname}/libs
+
+
+%changelog
+* Tue Feb 21 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.9_95-2
++ Revision: 778368
+- Rebuild with proper dependencies
+
+* Fri Feb 17 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.9_95-1
++ Revision: 776013
+- Import R-sp
+- Import R-sp
+

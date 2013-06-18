@@ -4,7 +4,7 @@
 
 Name:             R-%{packname}
 Version:          1.0.5
-Release:          1
+Release:          2
 Summary:          classes and methods for spatial data
 Group:            Sciences/Mathematics
 License:          GPL (>= 2)

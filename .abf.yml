@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   sp_1.0-5.tar.gz: fa37e5ff209920151f36b76ed302c81b0f585e55
+sources:
+  sp_1.0-14.tar.gz: d1ff889383a3fd62fb49c6a8890c2a2bc2dbf493

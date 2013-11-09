@@ -3,13 +3,13 @@
 %global rlibdir  %{_libdir}/R/library
 
 Name:             R-%{packname}
-Version:          1.0.5
-Release:          2
+Version:          1.0.14
+Release:          1
 Summary:          classes and methods for spatial data
 Group:            Sciences/Mathematics
 License:          GPL (>= 2)
 URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
-Source0:          http://cran.r-project.org/src/contrib/sp_1.0-5.tar.gz
+Source0:          http://cran.r-project.org/src/contrib/sp_1.0-14.tar.gz
 Requires:         R-methods R-graphics 
 Requires:         R-utils R-lattice R-grid 
 %if %{with bootstrap}
@@ -68,3 +68,4 @@ xvfb-run %{_bindir}/R CMD check %{packname}
 %{rlibdir}/%{packname}/help
 %{rlibdir}/%{packname}/include
 %{rlibdir}/%{packname}/libs
+

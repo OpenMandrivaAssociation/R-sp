@@ -11,6 +11,7 @@ Group:            Sciences/Mathematics
 License:          GPL (>= 2)
 URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
 Source0:          http://cran.r-project.org/src/contrib/sp_1.0-15.tar.gz
+Source100: %{name}.rpmlintrc
 Requires:         R-methods R-graphics 
 Requires:         R-utils R-lattice R-grid 
 %if %{with bootstrap}

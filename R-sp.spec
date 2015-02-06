@@ -4,7 +4,7 @@
 
 Name:             R-%{packname}
 Version:          1.0.15
-Release:          1
+Release:          2
 Summary:          Classes and methods for spatial data
 
 Group:            Sciences/Mathematics

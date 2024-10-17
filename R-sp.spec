@@ -9,7 +9,7 @@ Summary:          Classes and methods for spatial data
 
 Group:            Sciences/Mathematics
 License:          GPL (>= 2)
-URL:              http://cran.r-project.org/web/packages/%{packname}/index.html
+URL:              https://cran.r-project.org/web/packages/%{packname}/index.html
 Source0:          http://cran.r-project.org/src/contrib/sp_1.0-15.tar.gz
 Source100: %{name}.rpmlintrc
 Requires:         R-methods R-graphics 
